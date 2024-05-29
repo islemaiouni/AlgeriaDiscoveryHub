@@ -11,7 +11,7 @@ For execute the Website you need run this after isntall xammp and run phpmyamdin
 # Algeria Discovery HuB 
 
 Welcome to the AlgeriaDiscoveryHuB  project repository. This project is a web application developed using PHP, MySQL, JavaScript, HTML, CSS, and Bootstrap. It also uses phpMyAdmin for database management and is set up to run on XAMPP. THis project desgined to make your life easier. Help popele algerian or not algerian to make next trip plan easy in algeria with advanced search for any sites tourstqiue exist in agleria desginde with Easy and modern user interface for make you expresione in this website unique  
-
+ and Also "Our website features an option to discover nearby tourist sites, allowing users to explore and uncover nearby tourist attractions directly from our platform." 
 ## Databease named islamda
 
 the Databease in our website in phpMyAdmin named islamda    you can create new databease and import our databease you can find it in file called databease.sql
