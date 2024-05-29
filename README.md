@@ -65,7 +65,7 @@ Feel free to contribute to this project by submitting pull requests or opening i
 
 index.php : is the landign page for our website
 search.php : is the search page for our website
-der.php : is the detail page for our website
+details.php : is the detail page for our website
 header.php : is the header for our website
 favori.php : is the favorites   page for our website
 assest folder contiet images for our website and some css 
