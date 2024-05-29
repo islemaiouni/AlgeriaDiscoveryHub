@@ -77,6 +77,7 @@ assest folder contiet images for our website and some css
 ![site tourstiuqe  page  Desktop Demo](./readme-images/28.PNG "Desktop Demo")
 ![Login   page  Desktop Demo](./readme-images/Capture.PNG "Desktop Demo")
 ![detials   page  Desktop Demo](./readme-images/7.PNG "Desktop Demo")
+![detials   page  Desktop Demo](./readme-images/5.PNG "Desktop Demo")
 
 
 
