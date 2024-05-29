@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 29 mai 2024 à 12:50
+-- Généré le : mer. 29 mai 2024 à 21:21
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -99,35 +99,6 @@ INSERT INTO `comments` (`CommentID`, `Comment`, `Timestamp`, `UserID`, `PlaceID`
 (6, 'good view city and music ', '2024-04-25 14:45:03', 8, 27),
 (7, 'good view and good place for take picturs', '2024-04-25 14:48:01', 8, 16),
 (8, 'this palce is greate ', '2024-05-29 10:05:54', 8, 61);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `favorite`
---
-
-CREATE TABLE `favorite` (
-  `UserID` int(11) NOT NULL,
-  `PlaceID` int(11) NOT NULL,
-  `TripID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `favorite`
---
-
-INSERT INTO `favorite` (`UserID`, `PlaceID`, `TripID`) VALUES
-(8, 7, 1),
-(8, 17, 1),
-(8, 11, 6),
-(8, 40, 6),
-(8, 14, 7),
-(8, 16, 7),
-(8, 6, 8),
-(8, 12, 8),
-(8, 19, 8),
-(8, 21, 8),
-(8, 25, 8);
 
 -- --------------------------------------------------------
 
@@ -400,118 +371,6 @@ INSERT INTO `savedplaces` (`UserID`, `PlaceID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `trip`
---
-
-CREATE TABLE `trip` (
-  `TripID` int(11) NOT NULL,
-  `UserID` int(11) DEFAULT NULL,
-  `TripName` varchar(255) DEFAULT NULL,
-  `Description` text DEFAULT NULL,
-  `StartDate` date DEFAULT NULL,
-  `Duration` int(11) DEFAULT NULL,
-  `WilliyaID` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Déchargement des données de la table `trip`
---
-
-INSERT INTO `trip` (`TripID`, `UserID`, `TripName`, `Description`, `StartDate`, `Duration`, `WilliyaID`) VALUES
-(1, 8, 'trip to aananaba', 'fefea', '2024-04-22', 4, 23),
-(6, 8, 'trip to aananaba', NULL, '2024-05-04', 3, 23),
-(7, 8, 'trip to algeria', 'efe', '2024-04-26', 5, 24),
-(8, 8, 'trip to algeria', NULL, '2024-04-26', 5, 24),
-(10, 8, 'trip to guelma', NULL, '2024-04-23', 6, 24),
-(12, 8, 'trip to aananaba', NULL, '2024-04-25', 5, 36),
-(13, 8, 'trip to aananaba', NULL, '2024-04-25', 5, 36),
-(14, 8, 'trip to aananaba', NULL, '2024-04-25', 5, 36),
-(15, 8, 'trip to aananaba', NULL, '2024-04-25', 5, 36),
-(16, 8, 'trip to aananaba', NULL, '2024-04-25', 5, 36),
-(17, 8, 'trip to aananaba', NULL, '2024-04-25', 5, 36),
-(18, 8, 'trip to aananaba', NULL, '2024-04-25', 5, 36),
-(19, 8, 'trip to aananaba', NULL, '2024-04-25', 5, 36),
-(20, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(21, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(22, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(23, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(24, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(25, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(26, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(27, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(28, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(29, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(30, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(31, 8, 'trip to aananaba', NULL, '2024-04-11', 2, 36),
-(32, 8, 'trip to aananaba', NULL, '2024-04-26', 3, 36),
-(33, 8, 'trip to aananaba', NULL, '2024-04-26', 3, 36),
-(34, 8, 'trip to aananaba', NULL, '2024-04-26', 3, 36),
-(35, 8, 'trip to aananaba', NULL, '2024-04-26', 3, 36),
-(36, 8, 'trip to aananaba', NULL, '2024-04-26', 3, 36),
-(37, 8, 'trip to aananaba', NULL, '2024-04-26', 3, 36),
-(38, 8, 'trip to aananaba', NULL, '2024-04-26', 3, 36),
-(39, 8, 'trip to aanislem', NULL, '2024-04-26', 3, 36),
-(40, 8, 'trip to aanislem', NULL, '2024-04-26', 3, 36),
-(41, 8, 'trip to aanislem', NULL, '2024-04-26', 3, 36),
-(42, 8, 'trip to guelma', NULL, '0000-00-00', 3, 23),
-(43, 8, 'trip to guelma', NULL, '0000-00-00', 3, 23),
-(44, 8, 'trip to guelma', NULL, '0000-00-00', 3, 23),
-(45, 8, 'trip to guelma', NULL, '0000-00-00', 3, 23),
-(46, 8, 'trip to guelma', NULL, '0000-00-00', 3, 23),
-(47, 8, 'trip to guelma', NULL, '0000-00-00', 3, 23),
-(48, 8, 'trip to guelma', NULL, '0000-00-00', 3, 23),
-(49, 8, 'trip to guelma', NULL, '0000-00-00', 3, 23),
-(50, 8, 'trip to guelma', NULL, '0000-00-00', 3, 23),
-(51, 8, 'trip to guelma', NULL, '0000-00-00', 3, 23),
-(52, 8, 'trip to guelma', NULL, '2024-04-27', 3, 23),
-(53, 8, 'trip to guelma', NULL, '2024-04-27', 3, 23),
-(54, 8, 'trip to guelma', NULL, '2024-04-27', 3, 23),
-(55, 8, 'trip to guelma', NULL, '2024-04-27', 3, 23),
-(56, 8, 'trip to guelma', NULL, '2024-04-27', 3, 23),
-(57, 8, 'trip to guelma', NULL, '2024-04-27', 3, 23),
-(58, 8, 'trip to guelma', NULL, '2024-04-27', 3, 23),
-(59, 8, 'trip to aananaba', NULL, '0000-00-00', 12, 23),
-(60, 8, 'trip to aananaba', NULL, '2024-04-25', 12, 23),
-(61, 8, 'trip to aananaba', NULL, '2024-04-25', 12, 23),
-(62, 8, 'trip to aananaba', NULL, '2024-04-25', 12, 23),
-(63, 8, 'trip to aananaba', NULL, '2024-04-25', 12, 23),
-(64, 8, 'trip to aananaba', NULL, '2024-04-25', 12, 23),
-(65, 8, 'trip to aananaba', NULL, '2024-04-24', 2, 23),
-(66, 8, 'trip to aananaba', NULL, '2024-04-24', 2, 23),
-(67, 8, 'trip to aananaba', NULL, '2024-04-24', 2, 23),
-(68, 8, 'trip to aananaba', NULL, '2024-04-24', 2, 23),
-(69, 8, 'trip to aananaba', NULL, '2024-04-24', 2, 23),
-(70, 8, 'trip to aananaba', NULL, '2024-04-24', 2, 23),
-(71, 8, 'trip to aananaba', NULL, '2024-04-24', 2, 23);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `tripday`
---
-
-CREATE TABLE `tripday` (
-  `TripDayID` int(11) NOT NULL,
-  `TripID` int(11) DEFAULT NULL,
-  `Date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `tripplace`
---
-
-CREATE TABLE `tripplace` (
-  `TripDayID` int(11) NOT NULL,
-  `PlaceID` int(11) NOT NULL,
-  `Order` int(11) DEFAULT NULL,
-  `Description` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `users`
 --
 
@@ -603,14 +462,6 @@ ALTER TABLE `comments`
   ADD KEY `PlaceID` (`PlaceID`);
 
 --
--- Index pour la table `favorite`
---
-ALTER TABLE `favorite`
-  ADD PRIMARY KEY (`UserID`,`PlaceID`),
-  ADD KEY `PlaceID` (`PlaceID`),
-  ADD KEY `TripID` (`TripID`);
-
---
 -- Index pour la table `historicalmonuments`
 --
 ALTER TABLE `historicalmonuments`
@@ -662,28 +513,6 @@ ALTER TABLE `savedplaces`
   ADD KEY `PlaceID` (`PlaceID`);
 
 --
--- Index pour la table `trip`
---
-ALTER TABLE `trip`
-  ADD PRIMARY KEY (`TripID`),
-  ADD KEY `UserID` (`UserID`),
-  ADD KEY `fk_trip_williyas` (`WilliyaID`);
-
---
--- Index pour la table `tripday`
---
-ALTER TABLE `tripday`
-  ADD PRIMARY KEY (`TripDayID`),
-  ADD KEY `TripID` (`TripID`);
-
---
--- Index pour la table `tripplace`
---
-ALTER TABLE `tripplace`
-  ADD PRIMARY KEY (`TripDayID`,`PlaceID`),
-  ADD KEY `PlaceID` (`PlaceID`);
-
---
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
@@ -710,12 +539,6 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `places`
   MODIFY `PlaceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
-
---
--- AUTO_INCREMENT pour la table `trip`
---
-ALTER TABLE `trip`
-  MODIFY `TripID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT pour la table `users`
@@ -745,14 +568,6 @@ ALTER TABLE `cities`
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`),
   ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`PlaceID`) REFERENCES `places` (`PlaceID`);
-
---
--- Contraintes pour la table `favorite`
---
-ALTER TABLE `favorite`
-  ADD CONSTRAINT `favorite_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`),
-  ADD CONSTRAINT `favorite_ibfk_2` FOREIGN KEY (`PlaceID`) REFERENCES `places` (`PlaceID`),
-  ADD CONSTRAINT `favorite_ibfk_3` FOREIGN KEY (`TripID`) REFERENCES `trip` (`TripID`);
 
 --
 -- Contraintes pour la table `historicalmonuments`
@@ -802,26 +617,6 @@ ALTER TABLE `restaurant`
 ALTER TABLE `savedplaces`
   ADD CONSTRAINT `savedplaces_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`),
   ADD CONSTRAINT `savedplaces_ibfk_2` FOREIGN KEY (`PlaceID`) REFERENCES `places` (`PlaceID`);
-
---
--- Contraintes pour la table `trip`
---
-ALTER TABLE `trip`
-  ADD CONSTRAINT `fk_trip_williyas` FOREIGN KEY (`WilliyaID`) REFERENCES `williyas` (`WilliyaID`),
-  ADD CONSTRAINT `trip_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
-
---
--- Contraintes pour la table `tripday`
---
-ALTER TABLE `tripday`
-  ADD CONSTRAINT `tripday_ibfk_1` FOREIGN KEY (`TripID`) REFERENCES `trip` (`TripID`);
-
---
--- Contraintes pour la table `tripplace`
---
-ALTER TABLE `tripplace`
-  ADD CONSTRAINT `tripplace_ibfk_1` FOREIGN KEY (`TripDayID`) REFERENCES `tripday` (`TripDayID`),
-  ADD CONSTRAINT `tripplace_ibfk_2` FOREIGN KEY (`PlaceID`) REFERENCES `places` (`PlaceID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
