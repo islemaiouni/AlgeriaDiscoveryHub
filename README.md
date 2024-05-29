@@ -3,7 +3,7 @@
 
 If you want to contact with me you can reach me at  Email :: islamaiouni@gmail.com 
 
-### Demo Screeshots
+### How to Run the proejct 
 
 For execute the Website you need run this after isntall xammp and run phpmyamdin and run datasbaese named islamda            you can run http://localhost/ridex1/index.php     
 
@@ -44,6 +44,7 @@ To run the project, open your web browser and navigate to:
 http://localhost/ridex1/index.php
 
 Technologies Used
+sql 
 PHP: Server-side scripting language.
 MySQL: Relational database management system.
 JavaScript: Client-side scripting.
