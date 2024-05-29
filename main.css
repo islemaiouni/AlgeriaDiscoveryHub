@@ -1,0 +1,56 @@
+.container-x {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-title-x {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.hero-text-x {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.input-wrapper-x {
+  margin-bottom: 20px;
+}
+
+.input-label-x {
+  display: block;
+  font-weight: bold;
+}
+
+.input-field-x {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-x {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-x:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-title-x {
+    font-size: 1.5rem;
+  }
+  
+  .hero-text-x {
+    font-size: 1rem;
+  }
+}
