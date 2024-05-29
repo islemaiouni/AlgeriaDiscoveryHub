@@ -1,4 +1,4 @@
-der php         is the detials    page     
+details php         is the detials    page     
 index php        landing page 
 favori php         is the favorites page after user save site or place to favori using herat icon    
 assestes      continet the image for sites      some css folder scritp js for header    
