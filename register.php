@@ -25,7 +25,7 @@ if (isset($_POST['register_btn'])) {
 
     if ($registration_status === true) {
         // Log in the user automatically after successful registration
-        loginUser($username, $password_1);
+        loginUser($email, $password_1);
         header('Location: index.php');
         exit();
     } else {
@@ -173,3 +173,4 @@ if (isset($_POST['register_btn'])) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
