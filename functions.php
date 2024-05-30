@@ -2,7 +2,6 @@
 
 session_start(); // Start session 
 $db = mysqli_connect('localhost', 'root', '', 'islamda');
-
 function registerUser() {
     global $db;
 
@@ -17,6 +16,16 @@ function registerUser() {
     if (empty($email)) { array_push($errors, "Email is required"); }
     if (empty($password_1)) { array_push($errors, "Password is required"); }
     if ($password_1 != $password_2) { array_push($errors, "The two passwords do not match"); }
+
+    // Check if email is already used
+    $query = "SELECT * FROM Users WHERE Email=?";
+    $stmt = mysqli_prepare($db, $query);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    if (mysqli_num_rows($result) > 0) {
+        array_push($errors, "Email is already in use. Please use another email.");
+    }
 
     if (count($errors) == 0) {
         $password = password_hash($password_1, PASSWORD_DEFAULT);
@@ -44,14 +53,14 @@ function registerUser() {
     }
 }
 
-function loginUser($username, $password) {
+function loginUser($email, $password) {
     global $db;
 
     $errors = [];
 
-    $query = "SELECT * FROM Users WHERE Username=? LIMIT 1";
+    $query = "SELECT * FROM Users WHERE Email=? LIMIT 1";
     $stmt = mysqli_prepare($db, $query);
-    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_bind_param($stmt, "s", $email);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
@@ -68,11 +77,10 @@ function loginUser($username, $password) {
             exit();
         }
     } else {
-        array_push($errors, "Username not found");
+        array_push($errors, "Email not found");
         $_SESSION['errors'] = $errors;
         header('Location: login.php');
         exit();
     }
 }
-
 ?>
