@@ -10,11 +10,11 @@ if (isset($_SESSION['user'])) {
 
 // Check if login form is submitted
 if (isset($_POST['login_btn'])) {
-    $username = $_POST['username'];
+    $email = $_POST['email']; // Change to use email instead of username
     $password = $_POST['password'];
 
     // Attempt to log in the user
-    loginUser($username, $password);
+    loginUser($email, $password);
 
     // Check if there's a stored redirect URL
     if (isset($_SESSION['redirect_url'])) {
@@ -32,6 +32,7 @@ if (isset($_POST['login_btn'])) {
 // Store the current page URL in a session variable
 $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,8 +130,9 @@ $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
                             </div>
                         <?php endif; ?>
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        
                         </div>
                         <div class="mb-3">
                             <div class="d-flex justify-content-between">
