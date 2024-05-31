@@ -24,7 +24,9 @@ To set up the project locally, follow these steps:
    - [XAMPP Download Link](https://www.apachefriends.org/index.html)
 
 2. **Clone the Repository:**
+   
    ```bash
+   https://github.com/islemaiouni/AlgeriaDiscoveryHub.git
    
 Move the Project Files:
 
