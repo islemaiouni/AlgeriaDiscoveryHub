@@ -25,7 +25,7 @@ To set up the project locally, follow these steps:
 
 2. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/RideX1.git
+   
 Move the Project Files:
 
 Move the cloned repository folder RideX1 into the htdocs directory of your XAMPP installation.
