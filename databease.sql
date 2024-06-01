@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 29 mai 2024 à 21:21
+-- Généré le : sam. 01 juin 2024 à 11:00
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -98,7 +98,12 @@ INSERT INTO `comments` (`CommentID`, `Comment`, `Timestamp`, `UserID`, `PlaceID`
 (5, 'bad room service', '2024-04-13 07:39:27', 8, 27),
 (6, 'good view city and music ', '2024-04-25 14:45:03', 8, 27),
 (7, 'good view and good place for take picturs', '2024-04-25 14:48:01', 8, 16),
-(8, 'this palce is greate ', '2024-05-29 10:05:54', 8, 61);
+(8, 'this palce is greate ', '2024-05-29 10:05:54', 8, 61),
+(9, 'good view calm beach mountain view ', '2024-06-01 08:15:06', 8, 66),
+(10, 'good view for city beach and annab city', '2024-06-01 08:19:24', 8, 16),
+(11, 'beautful view', '2024-06-01 08:21:11', 8, 16),
+(12, 'good view room city ', '2024-06-01 08:24:15', 8, 16),
+(13, 'best food ever eat', '2024-06-01 08:24:46', 8, 8);
 
 -- --------------------------------------------------------
 
@@ -356,17 +361,15 @@ CREATE TABLE `savedplaces` (
 
 INSERT INTO `savedplaces` (`UserID`, `PlaceID`) VALUES
 (8, 6),
-(8, 7),
-(8, 8),
 (8, 10),
 (8, 12),
 (8, 19),
 (8, 21),
-(8, 22),
-(8, 25),
 (8, 27),
 (8, 40),
-(8, 61);
+(8, 55),
+(8, 60),
+(8, 66);
 
 -- --------------------------------------------------------
 
@@ -386,32 +389,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`UserID`, `Username`, `PasswordHash`, `Email`) VALUES
-(1, 'admin1', '$2y$10$nQQAdq7Il4ec079D.qD6M.6mq8aOYM286u9D5j4q/zZTKpJTDj2q6', 'admin1@example.com'),
-(2, 'user1', 'user123', 'user1@example.com'),
-(3, 'user2', 'user456', 'user2@example.com'),
-(4, 'user3', 'user789', 'user3@example.com'),
-(5, 'ISLEM', '$2y$10$ES.nDIXNj5b8fhKN4FbOOeKC5zZcZGA2GKjtXGC2qEqfTzl6lyQlO', 'islamaiouni@gmail.com'),
-(6, 'islamaioun', '$2y$10$5I8jR04Xo4GHmVdhZMDST.UWafFv327WzxPG9..uYAqI1VC9yM0N.', 'islamaiouni@gmail.com'),
-(7, 'islamaiouni', '$2y$10$TppvKNa7umHYt8S/..YPlO61jeVHxY1ZMqwavoJfvpy0QsmDi6u8G', 'islamaiouni@gmail.com'),
 (8, 'kama', '$2y$10$fUTM46zmVcrCh1jKuhay8ezv/HRRS5nS6YUknv1KIjE2/xLbrYDZa', 'islamaiouni@gmail.com'),
-(9, 'kamagfea', '$2y$10$RZRF2Sl3KrRSyKaZlXj/GuJek6Z3Z/t0UeQbrvLTjWGdKwLTfYUg.', 'islamaiouni@gmail.com'),
-(10, 'test', '$2y$10$O/WOqa1LeYOlao4T4JeKLeHiDbosdvqwUDbp0nWKDmO64tbvA8Oce', 'islamaiouni@gmail.com'),
-(11, 'jad', '$2y$10$kanNjI42yZW/pYywE0KCQe5qSYz0EWCvm0Sds50UBxuedJJAa0BQO', 'islamaiouni@gmail.com'),
-(12, 'jade', '$2y$10$feMAclT4nH2a724lnXfuv.EXN0vJH2Zd5wd1Z9Tdp80c8SMaMuM.S', 'islamaiouni@gmail.com'),
-(13, 'abdou', '$2y$10$GDiXytPJulcvugCFtZYeqOTJ8XfnobaAdl4SqFnqkG8EmpW7/fuJK', 'islamaiouni@gmail.com'),
-(14, 'TESTSF', '$2y$10$iTJumHfDSCsogeTFWlIku.IOpa8EVxNJ9ucA6Fd7UtpGuAF6aJZq6', 'islamaiouni@gmail.com'),
-(15, 'TESTSF', '$2y$10$OV.VpMbSn6pJ7Re4bsm4CepI4.3CFftvTCoAU4brjjRpwkykbFoPG', 'islamaiouni@gmail.com'),
-(16, 'TESTSF', '$2y$10$.amI7lL1eXuHhniFsjv.Ku0EiPMApeEw7d6KUVrqwE.Anpvd.QTX2', 'islamaiouni@gmail.com'),
-(17, 'kama234', '$2y$10$34zcXQDfMMvF6qAu2vXYS.qCY3QGBN7K60/qH8/SdElmUGOIKXJD6', 'islamaiouni@gmail.com'),
-(18, 'kama', '$2y$10$KD9xuAg9nWepfUzGc85fM.AUhrH3SvWrCrfKh8vHBJ.Rjlzd9IH9a', 'islamaiouni@gmail.com'),
-(19, 'QED', '$2y$10$9oPGZPDZmTzgOqTFzDibU.dprE1Rfct8WrGbY704GWn.oDYMlxiJu', 'islamaiouni@gmail.com'),
-(20, 'TESTSF', '$2y$10$2qB2UMvEBm1ux5Sgqcd2G.G6n3bNszF0uk6FbgqyV9TNGqR2fN9Wa', 'islamaioun23i@gmail.com'),
-(21, 'islamaiouniZZ', '$2y$10$c8ao.0BKCB6JHOfnKjOqiOQiyTCVy6GgjobqpLGiMQT9Y2uIy6TBS', 'islamaiouni@gmail.com'),
-(22, 'kama', '$2y$10$2sO4DpOzaT7j7ik8oIri8eqchpj.oKZX9F.FntbUwVXLvy1cV.7u.', 'islamaiouniedededc@gmail.com'),
-(23, 'TESTSF', '$2y$10$BELHmxw4hyun1s.slo2o3ewDH8CqF9FtnQbmnLmvEF2QB/Xn1RIfe', 'islamaiouniszzs@gmail.com'),
-(24, 'TESTSF', '$2y$10$Rn3.XGeajUWVoFvbiYetJePbbOpxqkubfGr6twd7Xycx2nkMQpRR6', 'islamaiounisxs@gmail.com'),
-(25, 'KAMATROG', '$2y$10$9Xm64dk4c1HcC/nGw5lNdOOKUjFswFZ7eeCEK7SEf2pNMT8r6tdtm', 'islemaaiouni123@gmail.com'),
-(26, 'lotfi', '$2y$10$w1Aaf2Pd2obdbEJt44UkneP3MzYoOdxA7gQuoNHCV0baiLqohnr2y', 'islamaiouniszxq@gmail.com');
+(32, 'ISLAMda', '$2y$10$Y.uxy8R7bB4aw9PWcOBC6udTdIe7HVP3mts.oBeQQY2ANe6i3ecAO', 'islamaiouni231@gmail.com'),
+(33, 'TESTSF', '$2y$10$8vLOhmuyetFAEt5UDqQa7eCk/5FYW2Av1djYNc17OVdvQbuJ7Co9y', 'islamaiouscqsni@gmail.com'),
+(34, 'SAJIDA', '$2y$10$jQ1NmVq9hk3YsEj0bU.1qOWe/PGjFhn9FLAKhWvBU1W/4pjNAhc6.', 'islamaiouniZDA@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -532,7 +513,7 @@ ALTER TABLE `williyas`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `CommentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `CommentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `places`
@@ -544,7 +525,7 @@ ALTER TABLE `places`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- Contraintes pour les tables déchargées
