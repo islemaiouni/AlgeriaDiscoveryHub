@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'header.php';
 ?>
   
@@ -340,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var originalPlaceTypeOptions = Array.from(placeTypeSelect.options);
 
-    // Get cities data from PHP
+    // Get cities data 
     var cities = <?php
         $conn = mysqli_connect('localhost', 'root', '', 'islamda');
         if ($conn->connect_error) {
@@ -480,20 +481,24 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <div class="form__groupx">
-                <p>Place Type:</p>
-                <div class="input__groupx">
-                    <select class="select__optionx" name="placeType" id="placeType">
-                        <option value="" selected>Select place type</option>
-                        <option value="hotel" <?= isset($_GET['placeType']) && $_GET['placeType'] == 'hotel' ? 'selected' : ''; ?>>Hotel</option>
-                        <option value="restaurant" <?= isset($_GET['placeType']) && $_GET['placeType'] == 'restaurant' ? 'selected' : ''; ?>>Restaurant</option>
-                        <option value="beach" <?= isset($_GET['placeType']) && $_GET['placeType'] == 'beach' ? 'selected' : ''; ?>>Beach</option>
-                        <option value="museum" <?= isset($_GET['placeType']) && $_GET['placeType'] == 'museum' ? 'selected' : ''; ?>>Museum</option>
-                        <option value="historical_monument" <?= isset($_GET['placeType']) && $_GET['placeType'] == 'historical_monument' ? 'selected' : ''; ?>>Historical Monument</option>
-                        <option value="park" <?= isset($_GET['placeType']) && $_GET['placeType'] == 'park' ? 'selected' : ''; ?>>Park</option>
-                        <option value="religious_site" <?= isset($_GET['placeType']) && $_GET['placeType'] == 'religious_site' ? 'selected' : ''; ?>>Religious Site</option>
-                    </select>
-                </div>
-            </div>
+    <p>Place Type:</p>
+    <div class="input__groupx">
+        <select class="select__optionx" name="placeType" id="placeType">
+            <option value="" selected>Select place type</option>
+            <option value="hotel" <?= isset($_GET['placeType']) && strtolower($_GET['placeType']) === 'hotel' ? 'selected' : ''; ?>>Hotel</option>
+            <option value="restaurant" <?= isset($_GET['placeType']) && strtolower($_GET['placeType']) === 'restaurant' ? 'selected' : ''; ?>>Restaurant</option>
+            <option value="beach" <?= isset($_GET['placeType']) && strtolower($_GET['placeType']) === 'beach' ? 'selected' : ''; ?>>Beach</option>
+            <option value="museum" <?= isset($_GET['placeType']) && strtolower($_GET['placeType']) === 'museum' ? 'selected' : ''; ?>>Museum</option>
+            <option value="park" <?= isset($_GET['placeType']) && strtolower($_GET['placeType']) === 'park' ? 'selected' : ''; ?>>Park</option>
+            <option value="historical monument" <?= isset($_GET['placeType']) && strtolower($_GET['placeType']) === 'historical monument' ? 'selected' : ''; ?>>Historical Monument</option>
+            <option value="religious site" <?= isset($_GET['placeType']) && strtolower($_GET['placeType']) === 'religious site' ? 'selected' : ''; ?>>Religious Site</option>
+
+            
+        </select>
+    </div>
+</div>
+
+           
             <button type="submit" class="btnx" id="searchButton">Search</button>
         </form>
     </div>
@@ -638,11 +643,12 @@ LEFT JOIN
 LEFT JOIN
     beach b ON Places.PlaceID = b.PlaceID
 LEFT JOIN
-    park p ON Places.PlaceID = p.PlaceID
+    park p ON Places.PlaceID = p.PlaceID 
 LEFT JOIN
     historicalmonuments hm ON Places.PlaceID = hm.PlaceID
 LEFT JOIN
     religious_sites rs ON Places.PlaceID = rs.PlaceID";
+
 
 if (!empty($city)) {
     $query .= " WHERE Cities.CityID = '$city'";
@@ -651,14 +657,16 @@ if (!empty($city)) {
 }
 
 if (!empty($placeType)) {
+    // Ensure case-insensitive comparison
+    $placeType = strtolower($placeType);
     $query .= " AND (
-        (h.PlaceID IS NOT NULL AND '$placeType' = 'hotel') OR 
-        (r.PlaceID IS NOT NULL AND '$placeType' = 'restaurant') OR 
-        (m.PlaceID IS NOT NULL AND '$placeType' = 'museum') OR 
-        (b.PlaceID IS NOT NULL AND '$placeType' = 'beach') OR
-        (p.PlaceID IS NOT NULL AND '$placeType' = 'park') OR
-        (hm.PlaceID IS NOT NULL AND '$placeType' = 'historical monument') OR
-        (rs.PlaceID IS NOT NULL AND '$placeType' = 'religious site')
+        (h.PlaceID IS NOT NULL AND LOWER('$placeType') = 'hotel') OR 
+        (r.PlaceID IS NOT NULL AND LOWER('$placeType') = 'restaurant') OR 
+        (m.PlaceID IS NOT NULL AND LOWER('$placeType') = 'museum') OR 
+        (b.PlaceID IS NOT NULL AND LOWER('$placeType') = 'beach') OR
+        (p.PlaceID IS NOT NULL AND LOWER('$placeType') = 'park') OR
+        (hm.PlaceID IS NOT NULL AND LOWER('$placeType') = 'historical monument') OR
+        (rs.PlaceID IS NOT NULL AND LOWER('$placeType') = 'religious site')
     )";
 }
 
@@ -673,6 +681,7 @@ if (!empty($paymentType)) {
         $query .= " AND Places.paymentgratuit = 'non_free'";
     }
 }
+
 $result = $conn->query($query);
 
 
@@ -740,6 +749,9 @@ $conn->close();
 </body>
 
 </html>
+
+
+
 
 
 
